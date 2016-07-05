@@ -4,24 +4,21 @@ module GamesBack
   class << self
     def calculate(records)
       results = records.map do |player, record|
-        if player == 1
-          [player, nil]
+        [player, record[0] - record[1]]
+      end.sort_by do |row|
+        row[1]
+      end.reverse
+
+      top_player = results.first
+
+      results = results.map do |row|
+        if row[1] == top_player[1]
+          [row[0], nil]
         else
-          [player, games_behind(records[1], record)]
+          [row[0], (top_player[1] - row[1]) / 2.0]
         end
       end
       Hash[results]
-    end
-
-    private
-
-    def games_behind(player_a, player_b)
-      player_a_wins = player_a[0]
-      player_a_losses = player_a[1]
-      player_b_wins = player_b[0]
-      player_b_losses = player_b[1]
-
-      (player_a_wins - player_b_wins + player_b_losses - player_a_losses) / 2.0
     end
   end
 end

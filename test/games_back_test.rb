@@ -6,14 +6,14 @@ class GamesBackTest < Minitest::Test
   end
 
   def test_it_works_for_one_ranking
-    results = GamesBack.calculate({ 1 => [12, 29] })
+    actual = GamesBack.calculate({ 1 => [12, 29] })
     expected = { 1 => nil }
-    assert_equal expected, results
+    assert_equal expected, actual
   end
 
-  def test_it_works_for_two_rankings
-    results = GamesBack.calculate({ 1 => [2, 1], 2 => [1, 2] })
-    expected = { 1 => nil, 2 => 1 }
-    assert_equal expected, results
+  def test_it_works_for_more_rankings
+    actual = GamesBack.calculate({ 1 => [3, 1], 2 => [1, 2], 3 => [10, 9], 4 => [0, 12] })
+    expected = { 1 => nil, 3 => 0.5, 2 => 1.5, 4 => 7.0 }
+    assert_equal expected, actual
   end
 end
