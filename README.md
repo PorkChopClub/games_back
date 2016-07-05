@@ -22,7 +22,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'games_back'
+GamesBack.calculate({ 1 => [3, 1], 2 => [1, 2], 3 => [10, 9], 4 => [0, 12] })
+=> {1=>nil, 3=>0.5, 2=>1.5, 4=>7.0}
+```
 
 ## Development
 
