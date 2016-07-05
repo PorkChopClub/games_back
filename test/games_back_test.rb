@@ -5,7 +5,9 @@ class GamesBackTest < Minitest::Test
     refute_nil ::GamesBack::VERSION
   end
 
-  def test_it_does_something_useful
-    assert false
+  def test_it_works_for_one_ranking
+    results = GamesBack.calculate({ 1 => [12, 29] })
+    expected = { 1 => nil }
+    assert_equal expected, results
   end
 end
