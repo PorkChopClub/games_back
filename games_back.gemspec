@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Computes games behind statistics.}
   spec.description   = %q{Computes games behind statistics.}
-  spec.homepage      = "https://github.com/jarednorman/games_behind"
+  spec.homepage      = "https://github.com/jarednorman/games_back"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = "exe"
