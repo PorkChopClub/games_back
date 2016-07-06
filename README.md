@@ -1,4 +1,4 @@
-# GamesBack
+# GamesBack [![Build Status](https://travis-ci.org/porkchopclub/games_back.svg?branch=master)](https://travis-ci.org/porkchopclub/games_back)
 
 Given a hash of win/loss records, return a hash with the same keys and the
 number of [games behind](https://en.wikipedia.org/wiki/Games_behind) each key
